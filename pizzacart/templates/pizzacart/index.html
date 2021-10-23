@@ -26,6 +26,7 @@
           <p class='float-right' style="Color: red;"><strong>({{item.piztype}})</strong></p>
           {% endif %}
           <p class="card-text">{{item.desc|truncatechars:30 }}</p>
+          <p class="card-text">Shape: <b>{{item.shape }}</b></p>
           <h6 class="card-title">₹ {{item.mrp}}</h6>
           <a href="viewpizza/{{item.eid}}"><button class="btn btn-primary my-2">View</button></a>
 

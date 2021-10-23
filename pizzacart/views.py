@@ -39,7 +39,7 @@ def index(request):
             cart[pizitem] = 1
 
         request.session['cart'] = cart
-        print("Cart:", request.session['cart'])
+        #print("Cart:", request.session['cart'])
         return redirect('/pizzacart')
 
     return render(request, 'pizzacart/index.html', thumb_items)
@@ -51,7 +51,9 @@ def contact(request):
 def about(request):
     return render(request, 'pizzacart/about.html')
 
+
 def view_pizza(request, eid):
+   
     product = Product.objects.filter(eid=eid)
     
     return render(request, 'pizzacart/pizView.html',{'pizza':product[0]})

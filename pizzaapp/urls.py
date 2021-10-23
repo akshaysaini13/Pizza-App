@@ -18,8 +18,15 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from pizzacart import views
+
+admin.site.site_header = "PizzaHub Admin"
+admin.site.site_title = "PizzaHub Admin Portal"
+admin.site.index_title = "Welcome to PizzaHub Portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pizzacart/', include('pizzacart.urls')),
-    path('', views.home, name="Home Page")
+    path('', views.home, name="Home Page"),
+    path('about/', views.about, name="About Page" ),
+    path('contact/', views.contact, name="Contact Page")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

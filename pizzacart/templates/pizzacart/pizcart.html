@@ -3,14 +3,14 @@
 {% load static %}
 {% block title %} Pizza Cart {% endblock title %}
 
-{% block body %} 
+{% block body %}
 {% load pizcart %}
 
 <div class="container">
     <h1 class="my-2">My Cart:</h1>
     <div class="boarder rounder p-3 m-3">
 
-        
+
         <table class="table">
 
             <thead>
@@ -18,17 +18,19 @@
                     <th>Sno.</th>
                     <th>Product</th>
                     <th>Price</th>
+                    <th>Shape</th>
                     <th>Quantity</th>
                     <th>Amount</th>
                 </tr>
             </thead>
 
             {% for item in items %}
-        
+
             <tr>
                 <td>{{item.eid}}</td>
                 <td>{{item.title}}</td>
                 <td>{{item.mrp}}</td>
+                <td>{{item|item_shape:request.session.cart}}</td>
                 <td>{{item|item_quantity:request.session.cart}}</td>
                 <td>{{item|final_amount:request.session.cart}}</td>
             </tr>
@@ -36,11 +38,19 @@
 
             <tfoot>
                 <tr>
-                    <th colspan="4">Final amount: </th>
+                    <th colspan="5">Final amount: </th>
                     <th>{{items|total_final_amount:request.session.cart}}</th>
                 </tr>
             </tfoot>
         </table>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-outline-success float-right">Checkout</button>
+        </div>
     </div>
 </div>
 

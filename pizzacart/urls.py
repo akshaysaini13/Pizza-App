@@ -9,5 +9,5 @@ urlpatterns = [
     path('viewpizza/<int:eid>', views.view_pizza, name="view Pizza"),
     path('checkout/', views.checkout, name="checkout"),
     path('cart/', views.pizzacart, name="Pizza Cart"),
-
+    
 ]

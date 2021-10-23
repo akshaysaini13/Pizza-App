@@ -11,29 +11,33 @@
             <div class="row">
                 <img src="/media/{{pizza.image}}" alt="" width="350rem" height="300rem">
             </div>
-            
+
         </div>
 
 
         <div class="col-md-7">
-            <div class="row"><h1>
-                {{pizza.title}}</h1>
+            <div class="row">
+                <h1>
+                    {{pizza.title}}</h1>
                 {{pizza.piztype}}
             </div>
-            <div class="row"><h6>
-                {{pizza.desc}}</h6>
+            <div class="row">
+                <h6>
+                    {{pizza.desc}}</h6>
             </div>
-            <div class="row my-3"><h5>
-                Price: ₹ {{pizza.mrp}}/- only</h5>
+            <div class="row my-3">
+                <h5>
+                    Price: ₹ {{pizza.mrp}}/- only</h>
             </div>
             <div class="row">
-                <div class="row mt-4 mx-auto">
-                    <button class="btn btn-outline-success mr-2">Add to cart</button>
-                    <button class="btn btn-outline-success">Buy</button>
-                </div>
+                <a href="/pizzacart"><button class="btn btn-outline-success mr-2">Back</button></a>
+            </div>
+            <div class="row">
+                <p>(Press back to place order from menu page)</p>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 

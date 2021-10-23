@@ -11,6 +11,10 @@ def piz_in_cart(item, cart):
             return True
     return False
 
+@register.filter(name='item_shape')
+def item_shape(item, cart):
+    return item.shape
+
 
 @register.filter(name='item_quantity')
 def item_quantity(item, cart):
